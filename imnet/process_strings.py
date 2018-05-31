@@ -37,6 +37,7 @@ def _generate_matrix_elements_idx(iterator, strings, min_ld=1, max_ld=1):
             if ld >= min_ld and ld <= max_ld: 
                 yield Row(src=my_idx, dst=idx, weight=int(ld))
 
+
 def _balance_partitions(x, N_partitions, N_elements): 
     """Balances out the number of elements across the partitions"""
     n_per_part = N_elements/N_partitions/2
@@ -295,6 +296,7 @@ def iadd(a,b):
     a+=b
     return a
 
+
 def generate_degrees(strings, min_ld=1, max_ld=1, sc=None): 
     """
     Generate a matrix of degrees for the entire dataset
@@ -404,6 +406,7 @@ def process_file(input, kind='degrees', outdir='./',
 
     for k in kind:
         write_output(strings, k, outfile, min_ld, max_ld, sc)
+
 
 def write_output(strings, kind, outfile, min_ld=1, max_ld=1, sc=None): 
     """
